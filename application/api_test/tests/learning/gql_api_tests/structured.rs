@@ -17,7 +17,7 @@ async fn test_graphql_query_countries_name() {
         .expect("レスポンスの JSON 解析に失敗しました");
 
     assert_eq!(
-        resp_json.data.countries[0].name, "Andorra",
+        resp_json.data.country[0].name, "Andorra",
         "最初の国の名前が期待と異なります"
     );
 }
@@ -69,7 +69,7 @@ mod response {
 
     #[derive(serde::Deserialize, Debug)]
     pub struct QueryResponse {
-        pub countries: Vec<Country>,
+        pub country: Vec<Country>,
     }
 
     // 国の情報を表す構造体

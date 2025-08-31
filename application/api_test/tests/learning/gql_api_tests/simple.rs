@@ -3,7 +3,7 @@
 
 #[tokio::test]
 async fn simple_test_graphql_query_countries_name() {
-    let client = reqwest::Client::new();
+    let mut client = reqwest::Client::new();
 
     let gql_query = r#"
         query {
